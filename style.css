@@ -1,10 +1,20 @@
+body {
+    background-color: #22223b;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
 .container {
-    border: 2px solid red;
+    border: 8px solid #4a4e69;
     width: 800px;
     height: 800px;
     display: flex;
     flex-direction: column;
-    color: rgb(red, green, blue);
 }
 
 .grid-row {
@@ -13,6 +23,51 @@
 }
 
 .grid-square {
-    border: 1px solid black;
+    border: 0px;
     flex: 1;
+}
+
+.btn {
+    margin-top: 16px;
+    padding: 12px;
+    border: 0;
+    border-radius: 12px;
+    color: #f2e9e4;
+    background-color: #4a4e69;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: #383c50;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+footer {
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+#footer-container p {
+    cursor: default;
+    color: #f2e9e4;
+}
+
+#footer-container img {
+    width: 20px;
+    height: auto;
+    transition: 1s;
+}
+
+#footer-container a img:hover {
+    transform: rotateY(180deg) scale(1.2);
 }

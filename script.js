@@ -22,6 +22,7 @@ function createGrid(size) {
         for (let squares = 0; squares < size; squares++) {
             const square = document.createElement("div");
             square.classList.add("grid-square");
+            square.style.backgroundColor = "white";
             // let opacity = 0.1
 
             square.addEventListener("mouseover", () => {
