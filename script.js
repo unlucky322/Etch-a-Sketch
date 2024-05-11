@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 const btn = document.querySelector(".btn");
-
+const color = document.querySelector(".choiceColor");
 
 btn.onclick = () => {
     let size;
@@ -22,9 +22,12 @@ function createGrid(size) {
         for (let squares = 0; squares < size; squares++) {
             const square = document.createElement("div");
             square.classList.add("grid-square");
+            // let opacity = 0.1
 
-            square.addEventListener("mouseover", (event) => {
-                event.target.style.backgroundColor = "black"
+            square.addEventListener("mouseover", () => {
+                square.style.backgroundColor = randomColor();
+                // opacity += 0.1
+                // square.style.opacity = opacity
             });
             row.appendChild(square);
         };
@@ -33,8 +36,15 @@ function createGrid(size) {
     };
 };
 
-const deleteGrid = () => {
-    container.replaceChildren();
-};
+const deleteGrid = () => container.replaceChildren();
+
+function randomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const rgb = `rgb(${r}, ${g}, ${b})`;
+    return rgb
+    
+}
 
 createGrid(32);

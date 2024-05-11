@@ -4,6 +4,7 @@
     height: 800px;
     display: flex;
     flex-direction: column;
+    color: rgb(red, green, blue);
 }
 
 .grid-row {
