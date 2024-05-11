@@ -1,4 +1,18 @@
-const container = document.querySelector(".container")
+const container = document.querySelector(".container");
+const btn = document.querySelector(".btn");
+
+
+btn.onclick = () => {
+    let size;
+    size = prompt("What grid size do you want to create? The maximum grid size is 100.", 32);
+
+    while (size <= 0 || size > 100) {
+        size = prompt("An incorrect value has been entered. Enter a new value.", 32);
+    };
+    deleteGrid();
+    createGrid(size);
+
+};
 
 function createGrid(size) {
     for (let rows = 0; rows < size; rows++) {
@@ -13,10 +27,14 @@ function createGrid(size) {
                 event.target.style.backgroundColor = "black"
             });
             row.appendChild(square);
-        }
+        };
 
         container.appendChild(row);
-    }
-}
+    };
+};
 
-createGrid(32)
+const deleteGrid = () => {
+    container.replaceChildren();
+};
+
+createGrid(32);
